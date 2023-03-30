@@ -1,3 +1,74 @@
 /* styles.css */
+:root {
+  --primary: #05668dff;
+  --success: #56e39fff;
+  --danger: #ff5a5fff;
+  --dark: #131515ff;
+  --light: #f2e5d7ff;
+}
 
-/* Add styles here to customize the appearance of your app */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: Arial;
+  background: var(--dark);
+  color: var(--light);
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "tg tg tg c c ed" "tg tg tg c c ed" "tg tg tg c c ed" "bg bg bg c c ed";
+}
+.grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid > div > a {
+  display: block;
+  height: 100%;
+  color: var(--light);
+  width: 100%;
+  flex: 1;
+  border-collapse: collapse;
+  border: 1px solid var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all;
+  text-decoration: none;
+}
+.grid > div > a:hover {
+  background: var(--primary);
+}
+
+.extreme-droite {
+  grid-area: ed;
+  flex-direction: column;
+}
+
+.top-gauche {
+  grid-area: tg;
+}
+
+.bottom-gauche {
+  grid-area: bg;
+}
+
+.center {
+  flex-direction: column;
+  grid-area: c;
+}
+
+/* Add styles here to customize the appearance of your app *//*# sourceMappingURL=styles.css.map */
